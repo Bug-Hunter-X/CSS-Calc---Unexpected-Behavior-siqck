@@ -1,0 +1,13 @@
+To address issues with `calc()`, ensure consistent units within the calculation.  Instead of mixing percentages and pixels directly, calculate the pixel value beforehand or use only percentages. For nested elements, ensure the calculation's base is clearly defined. Consider using variables or pre-calculated values to improve readability and reduce unexpected outcomes.  Here's an example of a corrected approach:
+
+```css
+:root {
+  --sidebar-width: 200px;
+}
+
+.container {
+  width: calc(100% - var(--sidebar-width));
+}
+```
+
+This approach defines a variable for the sidebar width, making the calculation clearer and easier to maintain.  Avoid complex nested `calc()` expressions whenever possible for better readability and maintainability.
